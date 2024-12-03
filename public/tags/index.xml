@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on AmcaQt | CyberSecurity Enthusiast</title>
+        <link>http://localhost:1313/tags/</link>
+        <description>Recent content in Tags on AmcaQt | CyberSecurity Enthusiast</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 03 Dec 2024 19:47:03 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Easy</title>
+        <link>http://localhost:1313/tags/easy/</link>
+        <pubDate>Tue, 03 Dec 2024 19:47:03 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/easy/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hacker 101</title>
+        <link>http://localhost:1313/tags/hacker-101/</link>
+        <pubDate>Tue, 03 Dec 2024 19:47:03 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/hacker-101/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hacking</title>
+        <link>http://localhost:1313/tags/hacking/</link>
+        <pubDate>Tue, 03 Dec 2024 19:47:03 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/hacking/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Write Up</title>
+        <link>http://localhost:1313/tags/write-up/</link>
+        <pubDate>Tue, 03 Dec 2024 19:47:03 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/write-up/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Info</title>
+        <link>http://localhost:1313/tags/info/</link>
+        <pubDate>Thu, 28 Nov 2024 21:05:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/info/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
