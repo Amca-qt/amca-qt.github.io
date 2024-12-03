@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacking on AmcaQt | CyberSecurity Enthusiast</title><link>https://amca-qt.github.io/tags/hacking/</link><description>Recent content in Hacking on AmcaQt | CyberSecurity Enthusiast</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Dec 2024 19:47:03 +0800</lastBuildDate><atom:link href="https://amca-qt.github.io/tags/hacking/index.xml" rel="self" type="application/rss+xml"/><item><title>Micro-CMS v1 WriteUp</title><link>https://amca-qt.github.io/p/micro-cms-v1-writeup/</link><pubDate>Tue, 03 Dec 2024 19:47:03 +0800</pubDate><guid>https://amca-qt.github.io/p/micro-cms-v1-writeup/</guid><description>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/cover.jpg" alt="Featured image of post Micro-CMS v1 WriteUp" />&lt;h1 id="flag-1--cross-site-scripting--xss-">Flag 1 : Cross Site Scripting ( XSS )
+&lt;/h1>&lt;p>At first we&amp;rsquo;ve been redirect to a simple webpage ,try to explore the site, but found nothing only &lt;code>testing page&lt;/code> ,&lt;code>Markdown Test&lt;/code> and &lt;code>Creating a new page&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/1.PNG"
+width="767"
+height="288"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/1_hu2173714166759521880.PNG 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/1_hu16958625592610048120.PNG 1024w"
+loading="lazy"
+alt="1"
+class="gallery-image"
+data-flex-grow="266"
+data-flex-basis="639px"
+>&lt;/p>
+&lt;p>so I try to edit the &lt;code>Testing Page&lt;/code> by add the XSS Payload on the title then go back to homepage and you&amp;rsquo;ll get the flag&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag1.jpg"
+width="547"
+height="219"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag1_hu16001131686207193085.jpg 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag1_hu2624143445414052479.jpg 1024w"
+loading="lazy"
+alt="Flag 1"
+class="gallery-image"
+data-flex-grow="249"
+data-flex-basis="599px"
+>&lt;/p>
+&lt;h1 id="flag-2--unauthorized-access">Flag 2 : Unauthorized Access
+&lt;/h1>&lt;p>When I created the first page , I noticed it was assigned an id of 6&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/2.PNG"
+width="775"
+height="371"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/2_hu4653122158811886795.PNG 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/2_hu12053154240974720234.PNG 1024w"
+loading="lazy"
+alt="3"
+class="gallery-image"
+data-flex-grow="208"
+data-flex-basis="501px"
+>&lt;/p>
+&lt;p>When I visit the two pages provided before, I noticed that the pages have an id of 1 and 2. which means there must be another pages with a different id. So I go around by changing the &lt;code>id&lt;/code> from &lt;code>1&lt;/code> to &lt;code>10&lt;/code> but found nothing.&lt;/p>
+&lt;p>So I try explore everything on the web and found that the &lt;code>edit page also have id &lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/3.PNG"
+width="853"
+height="396"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/3_hu12612520455435003035.PNG 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/3_hu5948440113294857229.PNG 1024w"
+loading="lazy"
+alt="4"
+class="gallery-image"
+data-flex-grow="215"
+data-flex-basis="516px"
+>&lt;/p>
+&lt;p>Just like before , I changing the &lt;code>id&lt;/code> from &lt;code>1&lt;/code> to &lt;code>10&lt;/code>, and found the 2nd flag&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag2.jpg"
+width="846"
+height="487"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag2_hu18405897385696044467.jpg 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag2_hu13414621166599617117.jpg 1024w"
+loading="lazy"
+alt="Flag 2"
+class="gallery-image"
+data-flex-grow="173"
+data-flex-basis="416px"
+>&lt;/p>
+&lt;h1 id="flag-3--sql-injection">Flag 3 : SQL Injection
+&lt;/h1>&lt;p>Since all pages refer an &lt;code>id&lt;/code> I try to test it with a &lt;code>single quote (')&lt;/code> and somehow reveal the third flag&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag3.jpg"
+width="796"
+height="141"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag3_hu4334565533236895097.jpg 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag3_hu9153271321015808374.jpg 1024w"
+loading="lazy"
+alt="Flag 3"
+class="gallery-image"
+data-flex-grow="564"
+data-flex-basis="1354px"
+>&lt;/p>
+&lt;h1 id="flag-4--stored-xss">Flag 4 : Stored XSS
+&lt;/h1>&lt;p>&lt;img src="https://amca-qt.github.io/img/4.PNG"
+loading="lazy"
+alt="6"
+>&lt;/p>
+&lt;p>See that &lt;code>Markdown is supported, but scripts are not&lt;/code> means we have to find a way to bypass the markdown filter to execute xss to get the flag. Noticed the button code ? let&amp;rsquo;s input XSS Payload in it&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;button onclick=alert(‘xss’)&amp;gt;click&amp;lt;/button&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The payload execute nicely but nothing showed up, try to view the source code and you&amp;rsquo;ll find the flag&lt;/p>
+&lt;p>&lt;img src="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag4.jpg"
+width="1341"
+height="310"
+srcset="https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag4_hu3608911376782244461.jpg 480w, https://amca-qt.github.io/p/micro-cms-v1-writeup/img/flag4_hu14428589215918755817.jpg 1024w"
+loading="lazy"
+alt="Flag 4"
+class="gallery-image"
+data-flex-grow="432"
+data-flex-basis="1038px"
+>&lt;/p>
+&lt;h1 id="conclusion">Conclusion
+&lt;/h1>&lt;p>In conclusion this chall really teach about common Vulnerabilities that goes around and still relevant on this modern world&lt;/p>
+&lt;blockquote>
+&lt;p>Anjai speaking&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://i.pinimg.com/originals/95/b1/d0/95b1d08de5b303cb5ab80af7b08dbdc4.gif"
+loading="lazy"
+alt="Gif"
+>&lt;/p>
+&lt;h1 id="happy-hacking">Happy Hacking
+&lt;/h1></description></item></channel></rss>
